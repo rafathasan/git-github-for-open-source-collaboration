@@ -10,7 +10,8 @@ filename = 'matrix.txt'
 matrix = []
 if os.path.exists(filename):
     with open(filename) as f:
-        matrix.append([row.split(',') for row in f])
+        for line in f:
+            matrix.append([int(x) for x in line.split(',')])
 else:
     print(filename+' does not exist!')
 
